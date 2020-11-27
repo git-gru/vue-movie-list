@@ -1,7 +1,9 @@
 <template>
-  <div class="hello">
+<div>
+  <router-link :to="`/movies/${movie.imdbID}`">
     {{ movie.Title }}
-  </div>
+  </router-link>
+</div>
 </template>
 
 <script lang="ts">
