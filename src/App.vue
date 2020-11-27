@@ -1,12 +1,26 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/movies/tt0372784">Show specific movie</router-link>
+      <router-link to="/">Home</router-link>
     </div>
     <router-view/>
   </div>
 </template>
+
+<script lang="ts">
+import Vue from 'vue';
+import { mapActions } from 'vuex';
+
+export default Vue.extend({
+  name: 'MovieList',
+  created() {
+    this.loadMovies();
+  },
+  methods: {
+    ...mapActions(['loadMovies']),
+  },
+});
+</script>
 
 <style lang="scss">
 #app {
